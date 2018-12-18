@@ -12,363 +12,13 @@ def scanport(ipaddress,firstport,lastport):
         pymap(ipaddress,i)
 
 def pymap (host,port):
-
-    
-    dictlist = {
-    "1":"tcpmux - TCP Port Service Multiplexer""
-    "2":"compressnet - Management Utility""
-    "3":"compressnet - Compression Process""
-    "5":"rje - Remote Job Entry""
-    "7":"echo""
-    "9":"discard"
-    "11":"systat - Active Users"
-    "13":"daytime"
-    "17":"qotd - Quote of the Day"
-    "18":"msp - Message Send Protocol"
-    "19":"chargen - Character Generator"
-    "20":"ftp-data - File Transfer Protocol [flux de données]"
-    "21":"ftp - File Transfer Protocol (le flux de contrôle pour le transfert de fichiers), voir Diagramme des flux FTP (port 20 et 21)"
-    "22":"SSH - Secure Shell"
-    "23":"telnet"
-    "24":"any private mail system"
-    "25":"smtp - Simple Mail Transfer"
-    "27":"nsw-fe - NSW User System FE"
-    "29":"msg-icp"
-    "31":"msg-auth - MSG Authentication"
-    "33":"dsp - Display Support Protocol"
-    "35":"any private printer server"
-    "37":"Time protocol"
-    "38":"rap - Route Access Protocol"
-    "39":"rlp - Resource Location Protocol"
-    "41":"graphics"
-    "42":"nameserver - Host Name Server"
-    "43":"nicname - Who Is"
-    "44":"mpm-flags - MPM FLAGS Protocol"
-    "45":"mpm - Message Processing Module [recv]"
-    "46":"mpm - Message Processing Module [default send]"
-    "47":"ni-ftp"
-    "48":"auditd - Digital Audit Daemon"
-    "49":"login - Login Host Protocol (Terminal Access Controller Access-Control System)"
-    "50":"re-mail-ck - Remote Mail Checking Protocol"
-    "51":"la-maint - IMP Logical Address Maintenance"
-    "52":"xns-time - XNS Time Protocol"
-    "53":"domain - Domain Name Service (DNS)"
-    "54":"xns-ch - XNS Clearinghouse"
-    "55":"isi-gl - ISI Graphics Language"
-    "56":"xns-auth - XNS Authentication"
-    "57":"any private terminal access"
-    "58":"xns-mail - XNS Mail"
-    "59":"any private file service"
-    "61":"ni-mail"
-    "62":"acas - ACA Services"
-    "64":"covia - Communications Integrator (CI)"
-    "65":"tacacs-ds - TACACS-Database Service"
-    "67":"bootps - Bootstrap Protocol Server, ce port est aussi utilisé par une extension de bootp : DHCP, pour la recherche d'un serveur DHCP"
-    "68":"bootpc - Bootstrap Protocol Client, ce port est aussi utilisé par une extension de bootp : DHCP, pour le dialogue entre le serveur DHCP et le client (attribution d'un bail pour une adresse IP)"
-    "69":"tftp - Trivial File Transfer"
-    "70":"gopher"
-    "71":"netrjs-1 Remote Job Service"
-    "72":"netrjs-2 Remote Job Service"
-    "73":"netrjs-3 Remote Job Service"
-    "74":"netrjs-4 Remote Job Service"
-    "75":"any private dial out service"
-    "76":"deos - Distributed External Object Store"
-    "77":"any private RJE service"
-    "78":"vettcp"
-    "79":"finger"
-    "80":"www-http - World Wide Web HTTP"
-    "81":"host2-ns - HOSTS2 Name Server"
-    "82":"xfer - XFER Utility"
-    "83":"mit-ml-dev"
-    "84":"ctf - Common Trace Facility"
-    "85":"mit-ml-dev"
-    "86":"mfcobol - Micro Focus Cobol"
-    "87":"any private terminal link"
-    "88":"kerberos"
-    "89":"su-mit-tg - SU/MIT Telnet Gateway"
-    "90":"dnsix - DNSIX Security Attribute Token Map"
-    "91":"mit-dov - MIT Dover Spooler"
-    "92":"npp - Network Printing Protocol"
-    "93":"dcp - Device Control Protocol"
-    "94":"objcall - Tivoli Object Dispatcher"
-    "95":"supdup"
-    "96":"dixie - DIXIE Protocol Specification"
-    "97":"swift-rvf - Swift Remote Virtual File Protocol"
-    "98":"tacnews"
-    "99":"metagram - Metagram Relay"
-    "100":"newacct - [unauthorized use]"
-    "101":"hostname - NIC Host Name Server"
-    "102":"iso-tsap"
-    "103":"gppitnp - Genesis Point-To-Point Trans Net"
-    "104":"acr-nema - ACR-NEMA Digital Imag. & Comm. 300"
-    "105":"csnet-ns - Mailbox Name Nameserver"
-    "106":"3com-tsmux"
-    "107":"rtelnet - Remote Telnet Service"
-    "108":"snagas - SNA Gateway Access Server"
-    "109":"pop2 - Post Office Protocol - Version 2 RFC 937"
-    "110":"pop3 - Post Office Protocol - Version 3"
-    "111":"sunrpc - SUN Remote Procedure Call"
-    "112":"mcidas - McIDAS Data Transmission Protocol"
-    "113":"auth - Authentication Service"
-    "114":"audionews - Audio News Multicast"
-    "115":"sftp - Secure File Transfer Protocol"
-    "116":"ansanotify - ANSA REX Notify"
-    "117":"uucp-path - UUCP Path Service"
-    "118":"sqlserv - SQL Services"
-    "119":"nntp - Network News Transfer Protocol"
-    "120":"cfdptkt"
-    "121":"erpc - Encore Expedited Remote Pro.Call"
-    "122":"smakynet"
-    "123":"ntp - Network Time Protocol"
-    "124":"ansatrader - ANSA REX Trader"
-    "125":"locus-map - Locus PC-Interface Net Map Server"
-    "126":"unitary - Unisys Unitary Login"
-    "127":"locus-con - Locus PC-Interface Conn Server"
-    "128":"gss-xlicen - GSS X License Verification"
-    "129":"pwdgen - Password Generator Protocol"
-    "130":"cisco-fna - cisco FNATIVE"
-    "131":"cisco-tna - cisco TNATIVE"
-    "132":"cisco-sys - cisco SYSMAINT"
-    "133":"statsrv - Statistics Service"
-    "135":"loc-srv - Location Service"
-    "136":"profile - PROFILE Naming System"
-    "137":"netbios-ns - NETBIOS Name Service"
-    "138":"netbios-dgm - NETBIOS Datagram Service"
-    "139":"netbios-ssn - NETBIOS Session Service"
-    "140":"emfis-data - EMFIS Data Service"
-    "141":"emfis-cntl - EMFIS Control Service"
-    "142":"bl-idm - Britton-Lee IDM"
-    "143":"imap2, imap4 - Internet Message Access Protocol v4 RFC 3501"
-    "144":"news"
-    "145":"uaac"
-    "146":"iso-tp0"
-    "147":"iso-ip"
-    "148":"cronus - CRONUS-SUPPORT"
-    "149":"aed-512 - AED 512 Emulation Service"
-    "150":"sql-net"
-    "151":"hems"
-    "152":"bftp - Background File Transfer Program"
-    "153":"sgmp"
-    "154":"netsc-prod"
-    "155":"netsc-dev"
-    "156":"sqlsrv - SQL Service"
-    "157":"knet-cmp - KNET/VM Command/Message Protocol"
-    "158":"pcmail-srv - PCMail Server"
-    "159":"nss-routing"
-    "160":"sgmp-traps"
-    "161":"SNMP - Simple Network Management Protocol"
-    "162":"snmptrap - Simple Network Management Protocol Trap"
-    "163":"cmip-man - CMIP/TCP Manager"
-    "164":"cmip-agent - CMIP/TCP Agent"
-    "165":"xns-courier - Xerox"
-    "166":"s-net - Sirius Systems"
-    "167":"namp"
-    "168":"rsvd"
-    "169":"send"
-    "170":"print-srv - Network PostScript"
-    "171":"multiplex - Network Innovations Multiplex"
-    "172":"cl/1 - Network Innocations CL/1"
-    "173":"xyplex-mux - Xyplex"
-    "174":"mailq"
-    "175":"vmnet"
-    "176":"genrad-mux"
-    "177":"xdmcp - X Display Manager Control Protocol"
-    "178":"nextstep - NeXTSTEP Window Server"
-    "179":"bgp - Border Gateway Protocol"
-    "180":"ris - Intergraph"
-    "181":"unify"
-    "182":"audit - Unisys Audit SITP"
-    "183":"ocbinder"
-    "184":"ocserver"
-    "185":"remote-kis"
-    "186":"kis - KIS Protocol"
-    "187":"aci - Application Communication Interface"
-    "188":"mumps - Plus Five's MUMPS"
-    "189":"qft - Queued File Transport"
-    "190":"gacp - Gateway Access Protocol"
-    "191":"prospero - Prospero Directory Service"
-    "192":"osu-nms - OSU Network Monitoring System"
-    "193":"srmp - Spider Remote Monitoring Protocol"
-    "194":"Internet relay chat (IRC)"
-    "195":"dn6-nlm-aud - DNSIX Network Level Module Audit"
-    "196":"dn6-nlm-red - DNSIX Session Mgt Module Audit Redir"
-    "197":"dls - Directory Location Service"
-    "198":"dls-mon - Directory Location Service Monitor"
-    "199":"smux"
-    "200":"src - IBM System Resource Controller"
-    "201":"at-rtmp - AppleTalk Routing Maintenance"
-    "202":"at-nbp - AppleTalk Name Binding"
-    "203":"at-3 - AppleTalk Unused"
-    "204":"at-echo - AppleTalk Echo"
-    "205":"at-5 - AppleTalk Unused"
-    "206":"at-zis - AppleTalk Zone Information"
-    "207":"at-7 - AppleTalk Unused"
-    "208":"at-8 - AppleTalk Unused"
-    "209":"tam - Trivial Mail Authentication Protocol"
-    "210":"z39.50"
-    "211":"914c/g - Texas Instruments 914C/G Terminal"
-    "212":"anet - ATEXSSTR"
-    "213":"ipx"
-    "214":"vmpwscs - VM PWSCS"
-    "215":"softpc - Insignia Solutions"
-    "216":"atls - Access Technology License Server"
-    "217":"dbase - dBASE Unix"
-    "218":"mpp - Netix Message Posting Protocol"
-    "219":"uarps - Unisys ARPs"
-    "220":"imap3 - Interactive Mail Access Protocol v3 RFC 1203"
-    "221":"fln-spx - Berkeley rlogind with SPX auth"
-    "222":"rsh-spx - Berkeley rshd with SPX auth"
-    "223":"cdc - Certificate Distribution Center"
-    "243":"sur-meas - Surveet Measurement"
-    "245":"link"
-    "246":"dsp3270 - Display Systems Protocol"
-    "264":"BGMP - Border Gateway Multicast Protocol"
-    "344":"pdap - Prospero Data Access Protocol"
-    "345":"pawserv - Perf Analysis Workbench"
-    "346":"zserv - Zebra server"
-    "347":"fatserv - Fatmen Server"
-    "348":"csi-sgwp - Cabletron Management Protocol"
-    "371":"clearcase"
-    "372":"ulistserv - Unix Listserv"
-    "373":"legent-1 - Legent Corporation"
-    "374":"legent-2 - Legent Corporation"
-    "375":"hassle"
-    "376":"nip - Amiga Envoy Network Inquiry Proto"
-    "377":"tnETOS - NEC Corporation"
-    "378":"dsETOS - NEC Corporation"
-    "379":"is99c - TIA/EIA/IS-99 modem client"
-    "380":"is99s - TIA/EIA/IS-99 modem server"
-    "381":"hp-collector - hp performance data collector"
-    "382":"hp-managed-node - hp performance data managed node"
-    "383":"hp-alarm-mgr - hp performance data alarm manager"
-    "384":"arns - A Remote Network Server System"
-    "385":"ibm-app - IBM Application"
-    "386":"asa - ASA Message Router Object Def."
-    "387":"aurp - AppleTalk Update-Based Routing Pro."
-    "388":"unidata-ldm - Unidata LDM Version 4"
-    "389":"Lightweight Directory Access Protocol (LDAP)"
-    "390":"uis"
-    "391":"synotics-relay - SynOptics SNMP Relay Port"
-    "392":"synotics-broker - SynOptics Port Broker Port"
-    "393":"dis - Data Interpretation System"
-    "394":"embl-ndt - EMBL Nucleic Data Transfer"
-    "395":"NETscout Control Protocol"
-    "396":"netware-ip - Novell NetWare over IP"
-    "397":"mptn - Multi Protocol Trans. Net."
-    "398":"kryptolan"
-    "400":"work-sol - Worksation Solutions"
-    "401":"ups - Uninteruptible Power Supply"
-    "402":"genie - Genie Protocol"
-    "403":"decap"
-    "404":"nced"
-    "407":"timbuktu"
-    "408":"prm-sm - Prospero Resource Manager Sys. Man."
-    "409":"prm-nm - Prospero Resource Manager Node Man."
-    "410":"decladebug - DECLadebug Remote Debug Protcol"
-    "411":"rmt - Remote MT Protocol"
-    "412":"synoptics-trap - Trap Convetion Port"
-    "413":"smsp"
-    "414":"infoseek"
-    "415":"bnet"
-    "416":"silverplatter"
-    "417":"onmux"
-    "418":"hyper-g"
-    "419":"ariel1"
-    "420":"smpte"
-    "421":"ariel2"
-    "422":"ariel3"
-    "423":"opc-job-start - IBM Operations Planning and Control Start"
-    "424":"opc-job-track - IBM Operations Planning and Control Track"
-    "425":"icad-el - ICAD"
-    "426":"smartsdp"
-    "427":"svrloc - Server Location"
-    "428":"ocs_cmu"
-    "429":"ocs_amu"
-    "430":"utmpsd"
-    "431":"utmpcd"
-    "432":"iasd"
-    "433":"nnsp"
-    "434":"mobileip-agent"
-    "435":"mobileip-mn"
-    "436":"dna-cml"
-    "437":"comscm"
-    "438":"dsfgw"
-    "439":"dasp"
-    "440":"sgcp"
-    "441":"decvms-sysmgt"
-    "442":"cvc_hostd"
-    "443":"https"
-    "444":"snpp - Simple Network Paging Protocol"
-    "445":"microsoft-ds (Microsoft Naked CIFS)"
-    "446":"ddm-rdb"
-    "447":"ddm-dfm"
-    "448":"ddm-byte"
-    "449":"as-servermap - AS Server Mapper"
-    "450":"tserver"
-    "465":"SMTP et connexion sécurisée SSL (non officiel)"
-    "497":"retrospect - Retrospect Backup software"
-    "500":"ISAKMP (Internet Security Association and Key Management Protocol), un des composants d'IPsec"
-    "502":"Modbus sur TCP."
-    "514":"Syslog RFC 3164 NB : ce service n'est pas listé habituellement dans le fichier etc\services"
-    "515":"printer - spooler"
-    "517":"talk"
-    "518":"ntalk"
-    "520":"Routing"
-    "525":"timed - timeserver"
-    "526":"tempo - newdate"
-    "546":"DHCP- Dynamic Host Configuration Protocol"
-    "548":"AppleShare IP Server"
-    "554":"RTSP (Real Time Streaming Protocol) RFC 2326"
-    "587":"(Message) Submission (for Mail) RFC 4409 RFC 5068"
-    "631":"Internet Printing Protocol"
-    "706":"Secure internet live conferencing"
-    "706":"Secure internet live conferencing"
-    "873":"rsync"
-    "993":"imap sécurisé (ssl)"
-    "995":"pop3 sécurisé (ssl)"
-    "1080":"SOCKS"
-    "1352":"Lotus Notes"
-    "1414":"IBM MQSeries"
-    "1433":"Microsoft SQL Server"
-    "1434":"Microsoft SQL Monitor"
-    "1521":"Serveur Oracle"
-    "1524":"Ingreslock, voir Ingres (base de données)"
-    "1720":"H323"
-    "1723":"PPTP"
-    "1863":"MSN (tchat)"
-    "2427":"MGCP"
-    "3000":"First Class Server"
-    "3051":"AMS (Agency Management System)"
-    "3306":"Mysql Server"
-    "3389":"Microsoft Terminal Server (RDP)"
-    "3632":"distcc (compilation partagée)"
-    "5060":"serveur SIP"
-    "5222":"serveur Jabber"
-    "5223":"serveur Jabber sécurisé (ssl)"
-    "5269":"serveur to server Jabber"
-    "5280":"serveur BOSH"
-    "5432":"serveur PostgreSQL"
-    "5498":"Hotline Tracker"
-    "5500":"Hotline Server"
-    "5501":"Hotline Server"
-    "5900":"VNC Server"
-    "5984":"Couchdb Server"
-    "6667":"Serveur IRC"
-    "6697":"Serveur IRC sécurisé (ssl)"
-    "7000":"Serveur IRC sécurisé (ssl) alternatif"
-    "7648":"Cu-seeme"
-    "8000":"Hotline"
-    "8080":"http alternatif (webcache)"
-    "8098":"Administration Serveur Microsoft Windows 2003"
-    "9009":"Pichat - Peer to peer chat software"
-    "11371":"OpenPGP - OpenPGP HTTP Keyserver"}
     
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         s.connect((host, port))
         print Fore.GREEN+"Connection on the port: ",port,"\t\t Port Open"
         print(Style.RESET_ALL)
-        s.send(u"OPEN!")
+        s.send()
         s.close()
     except:
         print Fore.RED+"Couldnt connect on the port ",port,"\t Port Close"
@@ -378,43 +28,43 @@ def main():
     os.system('cls')
     print """
 
-       /$$   /$$ /$$      /$$  /$$$$$$  /$$$$$$$        /$$$$$$$  /$$   /$$       /$$$$$$$   /$$$$$$  /$$   /$$ /$$    /$$ /$$$$$$$  /$$$$$$$$      
-      | $$$ | $$| $$$    /$$$ /$$__  $$| $$__  $$      | $$__  $$| $$  | $$      | $$__  $$ /$$__  $$| $$  | $$| $$   | $$| $$__  $$| $$_____/      
-      | $$$$| $$| $$$$  /$$$$| $$  \ $$| $$  \ $$      | $$  \ $$| $$  | $$      | $$  \ $$| $$  \ $$| $$  | $$| $$   | $$| $$  \ $$| $$            
-      | $$ $$ $$| $$ $$/$$ $$| $$$$$$$$| $$$$$$$/      | $$  | $$| $$  | $$      | $$$$$$$/| $$$$$$$$| $$  | $$|  $$ / $$/| $$$$$$$/| $$$$$         
-      | $$  $$$$| $$  $$$| $$| $$__  $$| $$____/       | $$  | $$| $$  | $$      | $$____/ | $$__  $$| $$  | $$ \  $$ $$/ | $$__  $$| $$__/         
-      | $$\  $$$| $$\  $ | $$| $$  | $$| $$            | $$  | $$| $$  | $$      | $$      | $$  | $$| $$  | $$  \  $$$/  | $$  \ $$| $$            
-      | $$ \  $$| $$ \/  | $$| $$  | $$| $$            | $$$$$$$/|  $$$$$$/      | $$      | $$  | $$|  $$$$$$/   \  $/   | $$  | $$| $$$$$$$$      
-      |__/  \__/|__/     |__/|__/  |__/|__/            |_______/  \______/       |__/      |__/  |__/ \______/     \_/    |__/  |__/|________/      
-                                                                                                                                                    
-                                                                                                                                                    
-                                                                                                                                                    
-              /$$$$$$  /$$    /$$ /$$$$$$$$  /$$$$$$         /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$$  /$$     /$$                                     
-             /$$__  $$| $$   | $$| $$_____/ /$$__  $$       /$$__  $$ /$$__  $$ /$$__  $$| $$__  $$|  $$   /$$/                                     
-            | $$  \ $$| $$   | $$| $$      | $$  \__/      | $$  \__/| $$  \__/| $$  \ $$| $$  \ $$ \  $$ /$$/                                      
-            | $$$$$$$$|  $$ / $$/| $$$$$   | $$            |  $$$$$$ | $$      | $$$$$$$$| $$$$$$$/  \  $$$$/                                       
-            | $$__  $$ \  $$ $$/ | $$__/   | $$             \____  $$| $$      | $$__  $$| $$____/    \  $$/                                        
-            | $$  | $$  \  $$$/  | $$      | $$    $$       /$$  \ $$| $$    $$| $$  | $$| $$          | $$                                         
-            | $$  | $$   \  $/   | $$$$$$$$|  $$$$$$/      |  $$$$$$/|  $$$$$$/| $$  | $$| $$          | $$                                         
-            |__/  |__/    \_/    |________/ \______/        \______/  \______/ |__/  |__/|__/          |__/                                         
-                                                                                                                                                    
-                                                                                                                                                    
-                                                                                                                                                    
-                                     /$$$$$$$  /$$     /$$       /$$$$$$$$  /$$$$$$                                                                 
-                                    | $$__  $$|  $$   /$$/      | $$_____/ /$$__  $$                                                                
-                                    | $$  \ $$ \  $$ /$$/       | $$      | $$  \ $$                                                                
-                                    | $$$$$$$   \  $$$$/        | $$$$$   | $$$$$$$$                                                                
-                                    | $$__  $$   \  $$/         | $$__/   | $$__  $$                                                                
-                                    | $$  \ $$    | $$          | $$      | $$  | $$                                                                
-                                    | $$$$$$$/    | $$          | $$$$$$$$| $$  | $$                                                                
-                                    |_______/     |__/          |________/|__/  |__/                                                                
-                                                                                                                                                    
-                                                                                   
-        Un mini nmap du pauvre
+       /$$   /$$ /$$      /$$  /$$$$$$  /$$$$$$$                         
+      | $$$ | $$| $$$    /$$$ /$$__  $$| $$__  $$                        
+      | $$$$| $$| $$$$  /$$$$| $$  \ $$| $$  \ $$                        
+      | $$ $$ $$| $$ $$/$$ $$| $$$$$$$$| $$$$$$$/                        
+      | $$  $$$$| $$  $$$| $$| $$__  $$| $$____/                         
+      | $$\  $$$| $$\  $ | $$| $$  | $$| $$                              
+      | $$ \  $$| $$ \/  | $$| $$  | $$| $$                              
+      |__/  \__/|__/     |__/|__/  |__/|__/                              
+                                                                          
+                                                                           
+                                                                           
+               /$$$$$$$  /$$   /$$                                         
+              | $$__  $$| $$  | $$                                         
+              | $$  \ $$| $$  | $$                                         
+              | $$  | $$| $$  | $$                                         
+              | $$  | $$| $$  | $$                                         
+              | $$  | $$| $$  | $$                                         
+              | $$$$$$$/|  $$$$$$/                                         
+              |_______/  \______/                                          
+                                                                           
+                                                                           
+                                                                           
+       /$$$$$$$   /$$$$$$  /$$   /$$ /$$    /$$ /$$$$$$$  /$$$$$$$$      
+      | $$__  $$ /$$__  $$| $$  | $$| $$   | $$| $$__  $$| $$_____/      
+      | $$  \ $$| $$  \ $$| $$  | $$| $$   | $$| $$  \ $$| $$            
+      | $$$$$$$/| $$$$$$$$| $$  | $$|  $$ / $$/| $$$$$$$/| $$$$$         
+      | $$____/ | $$__  $$| $$  | $$ \  $$ $$/ | $$__  $$| $$__/         
+      | $$      | $$  | $$| $$  | $$  \  $$$/  | $$  \ $$| $$            
+      | $$      | $$  | $$|  $$$$$$/   \  $/   | $$  | $$| $$$$$$$$      
+      |__/      |__/  |__/ \______/     \_/    |__/  |__/|________/      
+                                                                   
+
+         Un mini nmap du pauvre
     """
     host= raw_input("What is the host scanned : ")
     firstPort = raw_input("What is the first port scanned : ")
-    lastPort = raw_input("What is the first port scanned : ")
+    lastPort = raw_input("What is the last port scanned : ")
     print ("\n")
     try:
         firstPort=int(firstPort)
